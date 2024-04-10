@@ -1,0 +1,12 @@
+@(message: String, style: String = "scala") 
+
+@defining(play.core.PlayVersion.current) { version =>
+
+<section id="top">
+  <div class="wrapper">
+      <h1>Welcome to E-COMMERCE SITE!</h1>
+      <h1><a href="@routes.LoginController.showLogin">@message</a></h1>
+  </div>
+</section>
+</div>
+}

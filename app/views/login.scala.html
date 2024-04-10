@@ -1,0 +1,60 @@
+@()(implicit request: RequestHeader)
+@main1("Login") {
+<div class="row mt-3">
+</div>
+<div class="row mt-3">
+    <div class="col">
+
+        <form action="@routes.LoginController.login" method="POST" class="login-form">
+            @helper.CSRF.formField
+
+            <div class="form-container">
+                <h4> Login Form </h4>
+                <label for="exampleInputEmail1"> </label>
+                <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" pattern="[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+
+            </div>
+            <div class="form-container">
+                <label for="exampleInputPassword1"></label>
+                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" minlength="3" maxlength="20" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    .login-form {
+        background-color: #fff; /* Background color */
+        border: 1px solid #ccc; /* Border color */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Black shadow */
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .form-container {
+        margin-bottom: 15px;
+    }
+
+
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .h4 {
+    text-align: center;
+    align-items: center;
+
+    }
+
+    .form-container {
+        margin-bottom: 10px;
+    }
+</style>
+}
+
+

@@ -1,0 +1,33 @@
+
+
+@(title: String)(content: Html)(implicit flash: Flash)
+
+@main1("Login") {
+<div class="row mt-3">
+    <div class="col">
+        <nav class="nav">
+            <a class="nav-link" href="/items">Home</a>
+            <a class="nav-link" href="/cart">My Cart</a>
+            <a class="nav-link" href="/favourite">My Favourites</a>
+            <a class="nav-link" href="/logout">Logout</a>
+<!--            <form id="form" class="nav-link search">-->
+<!--                <input type="text" placeholder="Search" id="search" class="search">-->
+<!--            </form>-->
+        </nav>
+    </div>
+</div>
+
+@if(flash.get("success").nonEmpty) {
+<div class="row mt-3 justify-content-center">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Success!</strong> @flash.get("success").get
+    </div>
+</div>
+}
+<div class="row mt-3" style="max-height: 600px; overflow-y: auto;">
+    @content
+</div>
+}

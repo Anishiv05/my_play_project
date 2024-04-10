@@ -1,0 +1,246 @@
+/*
+ * Copyright (C) 2009-2017 Lightbend Inc. <https://www.lightbend.com>
+ */
+
+/* Reset styles */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+}
+
+/* Typography */
+article h1, article h2, article h3, article h4, article h5, article h6 {
+    color: #333;
+    font-weight: bold;
+    line-height: 1.25;
+    margin-top: 1.3em;
+}
+
+article h1 {
+    font-size: 36px;
+    margin: 0 0 18px;
+    border-bottom: 4px solid #80c846; /* Green border bottom */
+}
+
+article h2 {
+    font-size: 25px;
+    margin-bottom: 9px;
+    border-bottom: 2px solid #80c846; /* Green border bottom */
+}
+
+article h3 {
+    font-size: 18px;
+    margin-bottom: 9px;
+}
+
+/* Links */
+a {
+    color: #80c846;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+a:hover {
+    color: #6dae38; /* Darker green on hover */
+}
+
+/* Lists */
+article ul li,
+article ol li {
+    position: relative;
+    padding: 4px 0 4px 14px;
+}
+
+article ul li:before,
+article ol li:before {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    content: "►";
+    color: #80c846; /* Green bullet */
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+/* Forms */
+form legend {
+    display: none;
+}
+
+/* Miscellaneous */
+hr {
+    display: none;
+    visibility: hidden;
+}
+
+:focus {
+    outline: 0;
+}
+
+/* Styles for body and container */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+}
+
+/* Styles for tables */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+/* Styles for headings */
+h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Styles for columns */
+.col-2,
+.col-10 {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+/* Styles for links */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for buttons */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #bd2130;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Styles for navigation */
+.nav {
+    margin-bottom: 20px; /* Add margin at the bottom of the navigation */
+}
+
+.nav-link {
+    padding: 8px 16px; /* Add padding to the navigation links */
+}
+
+/* Add margin between navigation links */
+.nav-link:not(:last-child) {
+    margin-right: 10px;
+}
+
+ .card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      width: 500px;
+      margin: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+.card table th {
+        font-weight: bold; /* Make table headers bold */
+
+}
+
+.card table  {
+    text-align: centre;
+
+}
+
+.card table td {
+font-style: italic;
+      padding: 10px;
+
+}
+
+
+
+
+    .card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .card-content {
+      margin-top: 10px;
+    }
+    .card-content h3 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+    .card-content p {
+      font-size: 14px;
+    }
+
+

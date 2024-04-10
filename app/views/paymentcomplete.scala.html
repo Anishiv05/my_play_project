@@ -1,0 +1,65 @@
+@(title: String, productInfo: Seq[(Int, String, Int, Double)])
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@title</title>
+</head>
+<body>
+<h1 style="text-align: center; margin-top: 50px; font-size: 36px;">Payment Completed</h1>
+<p style="text-align: center; font-size: 18px;">Your purchase has been completed successfully. Thank you!</p>
+<div style="text-align: center;">
+    @if(productInfo.nonEmpty) {
+    <ul class="product-list">
+        @for((id, productName, quantity, price) <- productInfo) {
+        <li class="product-item">
+            <span class="product-name">@productName</span>
+            <span class="quantity">Quantity: @quantity</span>
+            <span class="price">Price: @("%.2f".format(price))</span>
+        </li>        }
+    </ul>
+    <p class="total">Total = @("%.2f".format(productInfo.map { case (_, _, _, price) => price }.sum))</p>
+    } else {
+    <p>No product information available.</p>
+    }
+</div>
+<div style="text-align: center;">
+    <img src="@routes.Assets.versioned("images/card_img.png")" alt="Success Image" style="width: 200px; margin-top: 20px;">
+</div>
+<div style="text-align: center; margin-top: 20px;">
+    <a href="@routes.LoginController.logout" style="text-decoration: none; font-size: 18px; color: blue;">Logout</a>
+    <br>
+    <a href="@routes.LoginController.index()" style="text-decoration: none; font-size: 18px; color: blue;">Home</a>
+</div>
+</body>
+
+<style>
+    .product-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+   .product-item {
+    margin-bottom: 20px;
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
+}
+
+
+    .product-name {
+        font-weight: bold;
+    }
+
+    .quantity, .price, .total {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .price, .total {
+        color: #007bff; /* Blue color for price and total */
+    }
+
+</style>
+</html>

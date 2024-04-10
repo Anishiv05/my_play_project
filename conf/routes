@@ -1,0 +1,41 @@
+
+
+
+
+
+GET     /                       controllers.HomeController.index
+GET     /assets/*file           controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /login                  controllers.LoginController.showLogin
+POST    /login                  controllers.LoginController.login
+GET     /logout                 controllers.LoginController.logout
+GET     /admin                  controllers.LoginController.admin
+GET     /items                  controllers.LoginController.index(category: Int ?= 0)
+
+GET     /item/:id               controllers.ItemController.show(id: Int)
+
+GET     /cart                   controllers.CartController.getAll
+POST    /cart/add               controllers.CartController.add(id: Int)
+POST    /cart/delete            controllers.CartController.remove(id: Int)
+POST    /cart/delete/all        controllers.CartController.removeAll
+POST    /cart/buy               controllers.CartController.buy
+
+GET     /favourite              controllers.FavouriteController.getAll
+POST    /favourite/add/:id      controllers.FavouriteController.add(id: Int)
+POST    /favourite/remove       controllers.FavouriteController.remove(id: Int)
+POST    /favourite/removeAll    controllers.FavouriteController.removeAll
+
+GET     /payment/form           controllers.PaymentController.showPaymentForm()
+GET     /checkout               controllers.PaymentController.processPayment()
+POST    /checkout               controllers.PaymentController.processPayment()
+
+POST    /checkout            controllers.PaymentController.getEmail()
+
+
+GET     /sendEmail                  controllers.EmailController.sendEmail()
+GET     /invoice                     controllers.EmailController.showInvoiceAndSendEmail()
+
+POST    /email                  controllers.PaymentController.getEmail()
+GET    /email                  controllers.PaymentController.getEmail()
+
+

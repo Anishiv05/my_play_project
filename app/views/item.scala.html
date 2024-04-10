@@ -1,0 +1,59 @@
+@(item: Item)(implicit request: RequestHeader,  flash: Flash)
+
+@home(item.title) {
+
+<div class="col-2">
+</div>
+
+<div class="col-10">
+    <div class="card">
+<!--        <img src="@routes.Assets.versioned("images/dairymilk.png")" alt="Item Image">-->
+        <div class="card-content">
+            <h3>@item.title</h3>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <td>@item.id</td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>@item.price</td>
+                </tr>
+                <tr>
+                    <th>Description </th>
+                    <td>@item.description</td>
+                </tr>
+                <tr>
+                    <th>Category</th>
+                    <td>@item.category</td>
+                </tr>
+
+                <tr>
+                    <th>@helper.form(action = routes.CartController.add(item.id)) {
+                        @helper.CSRF.formField
+
+                        <input value="Add to cart" type="submit"  class="btn btn-danger btn-sm"/>
+                        }
+                    </th>
+                    <td> @helper.form(action = routes.FavouriteController.add(item.id)) {
+                        @helper.CSRF.formField
+
+                        <input value="Add to favourites" type="submit"  class="btn btn-danger btn-sm"/>
+                        }
+                    </td>
+                </tr>
+
+
+            </table>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+}
